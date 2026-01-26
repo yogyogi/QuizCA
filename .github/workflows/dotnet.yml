@@ -53,5 +53,6 @@ jobs:
       uses: azure/container-apps-deploy-action@v1
       with:
         acrName: QuizAppACR 
+        containerAppName: quizapp
         resourceGroup: R1
         imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
