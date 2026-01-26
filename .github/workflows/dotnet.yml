@@ -9,9 +9,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  AZURE_WEBAPP_NAME: "Quiz"
-
 jobs:
   build:
 
@@ -52,10 +49,10 @@ jobs:
         docker build -f Quiz/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }} .
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
 
-    - name: Build and deploy Container App
-      uses: azure/container-apps-deploy-action@v1
-      with:
-        acrName: QuizAppACR 
-        containerAppName: quizca
-        resourceGroup: R1
-        imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
+    #- name: Build and deploy Container App
+    #  uses: azure/container-apps-deploy-action@v1
+    #  with:
+    #    acrName: QuizAppACR 
+    #    containerAppName: quizapp
+    #    resourceGroup: R1
+    #    imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
