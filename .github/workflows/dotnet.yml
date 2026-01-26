@@ -53,7 +53,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: | 
         docker build -f Quiz/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/QuizCA:${{ github.sha }} .
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ QuizCA.sha }}
+        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/QuizCA:${{ github.sha }}
 
     #- name: Build and deploy Container App
     #  uses: azure/container-apps-deploy-action@v1
