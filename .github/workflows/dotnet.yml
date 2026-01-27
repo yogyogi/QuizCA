@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  AZURE_WEBAPP_NAME: "QuizAPP"
+  AZURE_WEBAPP_NAME: "quizapp"
 
 jobs:
   build:
