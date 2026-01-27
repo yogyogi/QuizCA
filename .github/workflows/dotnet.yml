@@ -1,22 +1,19 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
+ 
 name: .NET
-
+ 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-env:
-  AZURE_WEBAPP_NAME: "quizapp"
-
+ 
 jobs:
   build:
-
+ 
     runs-on: ubuntu-latest
-
+ 
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET
@@ -36,12 +33,12 @@ jobs:
         path: TestResults
         # Use always() to always run this step to publish test results when there are test failures
       if: ${{ always() }}
-    
+     
     - name: Login via Azure CLI
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
+         
     - name: Build and push image'
       uses: azure/docker-login@v1
       with:
@@ -51,11 +48,4 @@ jobs:
     - run: | 
         docker build -f Quiz/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }} .
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
-
-    - name: Build and deploy Container App
-      uses: azure/container-apps-deploy-action@v1
-      with:
-        acrName: QuizAppACR
-        containerAppName: quizapp
-        resourceGroup: R1
-        imageToDeploy: ${{ secrets.REGISTRY_LOGIN_SERVER }}/quizca:${{ github.sha }}
+ 
