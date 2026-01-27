@@ -1,19 +1,22 @@
-# This repository using GitHub Actions CI / CD Pipeline to Deploy ASP.NET Core app to Azure App Services
+# This repository using GitHub Actions CI / CD Pipeline to Deploy ASP.NET Core Dockerized apps to Azure Container Apps
 
-<img src="https://www.yogihosting.com/wp-content/uploads/2026/01/GitHub-Actions-ASP.NET-Core-app.png" alt="Deploy ASP.NET Core app to Azure App Services with GitHub Actions CI / CD"  title="Deploy ASP.NET Core app to Azure App Services with GitHub Actions CI / CD">
+<img src="https://www.yogihosting.com/wp-content/uploads/2026/01/GitHub-Actions-CICD-Docker-ASPNET-Core.png" alt="Deploy ASP.NET Core Dockerized apps to Azure App Container Apps with GitHub Actions CI / CD"  title="Deploy ASP.NET Core Dockerized apps to Azure App Container Apps with GitHub Actions CI / CD pipeline">
 
-Learn all about how to perform this step by step from the tutorial <a href="https://www.yogihosting.com/aspnet-core-github-actions-cicd-azure/" target="_blank">link</a>.
+Learn all about how to perform this step by step from the tutorial <a href="https://www.yogihosting.com/github-actions-cicd-docker-aspnet-core" target="_blank">link</a>.
 
 ## Version
 .NET 10.0
 
 ## Instruction
-Open the Workflow file inside  `.github/workflows` directory. Change this file's environment variable `AZURE_WEBAPP_NAME` value to your Azure App's name. Also add your publish profile value to github secrets. 
+Open the Workflow file inside  `.github/workflows` directory. Change this file to your needs. You will also have to add GitHub Secrets based on your app's values. 
 
 ## What is covered
 The following things are implemented in this repository:
 
-- [x] Complete Workflow file for deploying .NET app to Azure App Services
+- [x] Complete Workflow file for deploying .NET Docker based app to Azure Container Apps
+- [x] Building the app's Docker Image on GitHub Actions Runner machine.
+- [x] Pushing the docker image of the app to ACR
+- [x] Deploying the Azure Container App based on the ACR image.
       
 ## Support
 
