@@ -2,7 +2,7 @@
 
 <img src="https://www.yogihosting.com/wp-content/uploads/2026/01/GitHub-Actions-CICD-Docker-ASPNET-Core.png" alt="Deploy ASP.NET Core Dockerized apps to Azure App Container Apps with GitHub Actions CI / CD"  title="Deploy ASP.NET Core Dockerized apps to Azure App Container Apps with GitHub Actions CI / CD pipeline">
 
-Learn all about how to perform this step by step from the tutorial <a href="https://www.yogihosting.com/github-actions-cicd-docker-aspnet-core" target="_blank">link</a>.
+Learn all about how to perform this step by step from the tutorial <a href="https://www.yogihosting.com/github-actions-cicd-docker-aspnet-core/" target="_blank">link</a>.
 
 ## Version
 .NET 10.0
